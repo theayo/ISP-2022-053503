@@ -10,8 +10,10 @@ class Parser:
     def print_information(self):
         lines = self.init_text()
         print(lines)
-        sentence = self.split_lines(lines)
-        print(sentence)
+        sentences = self.split_lines(lines)
+        print(sentences)
+        words = self.split_sentences(sentences)
+        print(words)
         pass
 
     def count_words(self):
@@ -41,5 +43,15 @@ class Parser:
     def split_lines(self, lines):
         sentence = []
         for line in lines:
-            sentence += re.split(r" |\! |\, |\n", line)
+            sentence += re.split(r"\. |! |; |:", line)
         return sentence
+
+    def split_sentences(self, sentences):
+        words = []
+        for sentence in sentences:
+            words += re.split(r"[ ,\n]", sentence)
+
+        for word in words:
+            word.lower()
+
+        return words
