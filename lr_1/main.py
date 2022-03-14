@@ -1,17 +1,14 @@
 from parse_text import Parser
+import input_handler as inp
 import re
 
 
 def main():
-    # name = input("FIle name:")
-    # name = "Empty"
-    # name = "Text"
-    name = "Some_words"
-    # name = "one_two_three"
+    user_choice = inp.file_input()
+    k, n = inp.def_nk()
 
-    ma = Parser(4, 10, name)
-    ma.print_information()
-    pass
+    pars = Parser(n, k, user_choice)
+    pars.print_information()
 
 
 if __name__ == "__main__":

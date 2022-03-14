@@ -10,22 +10,23 @@ class Parser:
 
     def print_information(self):
         lines = self.init_text()
+        if lines is None:
+            return
 
         sentences = self.split_lines(lines)
-        print(sentences)
         words = self.split_sentences(sentences)
-        print(words)
 
+        print()
         self.print_words_repetitions(words)
         counter_words = self.get_words_count(sentences)
-        print(f"Average word count: {self.get_avg_words(counter_words)}")
+        print(f"\nAverage word count: {self.get_avg_words(counter_words)}")
         print(f"Median value: {self.get_median_word(counter_words)}")
-        print(self.n_grams(words))
+        self.print_n_grams(words)
 
     def print_words_repetitions(self, words):
         counter = self.get_words_repetition(words)
         for word in counter:
-            print(word, ":", counter[word])
+            print(word, ":", counter[word], end=" ")
 
     def get_words_repetition(self, words):
         counter = {}
@@ -51,7 +52,7 @@ class Parser:
     def get_median_word(self, count_word):
         return int(median(count_word))
 
-    def n_grams(self, words):
+    def print_n_grams(self, words):
         big_word = ""
         for word in words:
             big_word += word
@@ -70,13 +71,11 @@ class Parser:
         for key, value in d.items():
             if i > self._k:
                 break
-            print(f"{key}: {value}")
+            print(f"{key}: {value}", end=" ")
             i += 1
-
 
     def init_text(self):
         lines = []
-
         with open("data/" + self._file + ".txt", 'r') as file:
             file.seek(0)
             lines = file.readlines()
