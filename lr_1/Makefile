@@ -1,4 +1,4 @@
 docker_run:
-	docker run -it --rm --name chiefkeef love:sosa
+	docker run -it --rm --name chiefkeef theayo/love:sosa
 stop:
 	docker stop chiefkeef
