@@ -9,7 +9,7 @@ def main():
     name = "Some_words"
     # name = "one_two_three"
 
-    ma = Parser(10, 4, name)
+    ma = Parser(4, 10, name)
     ma.print_information()
     pass
 

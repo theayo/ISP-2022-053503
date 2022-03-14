@@ -1,5 +1,5 @@
 import re
-import statistics as statistics
+from statistics import median, mean
 
 
 class Parser:
@@ -18,8 +18,8 @@ class Parser:
 
         self.print_words_repetitions(words)
         counter_words = self.get_words_count(sentences)
-        print(self.get_avg_words(counter_words))
-        print(self.get_median_word(counter_words))
+        print(f"Average word count: {self.get_avg_words(counter_words)}")
+        print(f"Median value: {self.get_median_word(counter_words)}")
         print(self.n_grams(words))
 
     def print_words_repetitions(self, words):
@@ -46,13 +46,33 @@ class Parser:
         return counter_words
 
     def get_avg_words(self, counter_words):
-        return statistics.mean(counter_words)
+        return int(mean(counter_words))
 
     def get_median_word(self, count_word):
-        return statistics.median(count_word)
+        return int(median(count_word))
 
     def n_grams(self, words):
-        pass
+        big_word = ""
+        for word in words:
+            big_word += word
+
+        size = self._n
+        healling_slave = dict()
+        for i in range(len(big_word) - size + 1):
+            temp = big_word[0 + i:i + size]
+            if temp in healling_slave:
+                healling_slave[temp] += 1
+            else:
+                healling_slave[temp] = 1
+        d = {k: healling_slave[k] for k in sorted(healling_slave, key=healling_slave.get, reverse=True)}
+
+        i = 0
+        for key, value in d.items():
+            if i > self._k:
+                break
+            print(f"{key}: {value}")
+            i += 1
+
 
     def init_text(self):
         lines = []
