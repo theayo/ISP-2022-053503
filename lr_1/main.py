@@ -5,9 +5,11 @@ import re
 def main():
     # name = input("FIle name:")
     # name = "Empty"
-    name = "Text"
+    # name = "Text"
+    name = "Some_words"
+    # name = "one_two_three"
 
-    ma = Parser(1, 2, name)
+    ma = Parser(10, 4, name)
     ma.print_information()
     pass
 

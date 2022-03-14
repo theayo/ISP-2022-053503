@@ -1,4 +1,5 @@
 import re
+import statistics as statistics
 
 
 class Parser:
@@ -11,29 +12,46 @@ class Parser:
         lines = self.init_text()
 
         sentences = self.split_lines(lines)
+        print(sentences)
         words = self.split_sentences(sentences)
+        print(words)
 
-        words_count = self.words_repetition(words)
-        pass
+        self.print_words_repetitions(words)
+        counter_words = self.get_words_count(sentences)
+        print(self.get_avg_words(counter_words))
+        print(self.get_median_word(counter_words))
+        print(self.n_grams(words))
 
-    def words_repetition(self, words):
+    def print_words_repetitions(self, words):
+        counter = self.get_words_repetition(words)
+        for word in counter:
+            print(word, ":", counter[word])
+
+    def get_words_repetition(self, words):
         counter = {}
         for word in words:
             count = counter.get(word, 0)
-            counter.update({word: count + 1})
+            counter[word] = count + 1
 
-        for word in counter:
-            print(word, ":", counter[word])
         return counter
 
+    def get_words_count(self, sentences):
+        counter_words = []
+        for sentence in sentences:
+            words = self.split_sentences([sentence])
 
-    def median_word(self):
-        pass
+            counter = len(words)
+            counter_words.append(counter)
 
-    def n_grams(self):
-        pass
+        return counter_words
 
-    def information(self):
+    def get_avg_words(self, counter_words):
+        return statistics.mean(counter_words)
+
+    def get_median_word(self, count_word):
+        return statistics.median(count_word)
+
+    def n_grams(self, words):
         pass
 
     def init_text(self):
@@ -58,9 +76,8 @@ class Parser:
         words = []
         for sentence in sentences:
             words += re.split(r"[ ,\n]", sentence)
-        for word in words:
-            word.lower()
 
-        words = list(filter(lambda word: word != '', words))
+        words = [word.lower() for word in words]
 
+        words = list(filter(lambda one: one != '', words))
         return words
