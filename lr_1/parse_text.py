@@ -22,6 +22,7 @@ class Parser:
         print(f"\nAverage word count: {self.get_avg_words(counter_words)}")
         print(f"Median value: {self.get_median_word(counter_words)}")
         self.print_n_grams(words)
+        print()
 
     def print_words_repetitions(self, words):
         counter = self.get_words_repetition(words)
