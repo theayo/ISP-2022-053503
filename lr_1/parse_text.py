@@ -9,15 +9,23 @@ class Parser:
 
     def print_information(self):
         lines = self.init_text()
-        print(lines)
+
         sentences = self.split_lines(lines)
-        print(sentences)
         words = self.split_sentences(sentences)
-        print(words)
+
+        words_count = self.words_repetition(words)
         pass
 
-    def count_words(self):
-        pass
+    def words_repetition(self, words):
+        counter = {}
+        for word in words:
+            count = counter.get(word, 0)
+            counter.update({word: count + 1})
+
+        for word in counter:
+            print(word, ":", counter[word])
+        return counter
+
 
     def median_word(self):
         pass
@@ -50,8 +58,9 @@ class Parser:
         words = []
         for sentence in sentences:
             words += re.split(r"[ ,\n]", sentence)
-
         for word in words:
             word.lower()
+
+        words = list(filter(lambda word: word != '', words))
 
         return words
