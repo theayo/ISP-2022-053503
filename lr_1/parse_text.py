@@ -68,7 +68,7 @@ class Parser:
                 healling_slave[temp] = 1
         d = {k: healling_slave[k] for k in sorted(healling_slave, key=healling_slave.get, reverse=True)}
 
-        i = 0
+        i = 1
         for key, value in d.items():
             if i > self._k:
                 break
