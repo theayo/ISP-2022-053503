@@ -1,6 +1,9 @@
-from Console.arg_parse import parser
-from Serializers.serializer import Serializer
+import Serializers
+from Serializers.ser_factory import SerializerFactory
 
-#args = parser.parse_args()
-#print(args.load)
-#print(args.load[0])
+
+def magnit():
+    pass
+
+
+print("meow")

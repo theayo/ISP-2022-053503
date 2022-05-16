@@ -1,6 +1,5 @@
 import math
-
-c = 42
+c = 22
 
 
 def f(x):

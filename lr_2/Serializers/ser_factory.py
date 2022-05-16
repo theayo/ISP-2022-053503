@@ -1,15 +1,21 @@
-from json_serializer.json_serializer import Json_serilizer_
-from toml_serializer.toml_serializer import Toml_serilizer_
-from yaml_serializer.yaml_serializer import Yaml_serilizer_
+"""Serializer factory"""
+import Serializers
 
-'''FAbrica rework'''
-class Fack:
-    def create_serializer(self, format):
-        if format == 'JSON':
-            return Json_serilizer_()
-        elif format == 'Yaml':
-            return Yaml_serilizer_()
-        elif format == 'TOml':
-            return Toml_serilizer_()
-        else:
-            raise ValueError(format)
+
+class SerializerFactory:
+    """Serializer factory"""
+
+    def __int__(self):
+        pass
+
+    @staticmethod
+    def create_serializer(serializer_type: str) -> Serializers.serializer:
+        """Return serializer when got extension"""
+        if serializer_type == 'json':
+            return Serializers.JsonSerializer()
+        if serializer_type == 'yaml':
+            return Serializers.YamlSerializer()
+        if serializer_type == 'toml':
+            return Serializers.TomlSerializer()
+
+        raise ValueError(format)

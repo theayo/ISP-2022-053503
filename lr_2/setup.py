@@ -2,10 +2,11 @@
 
 from distutils.core import setup
 
-setup(name='',
+setup(name='SERIAlizer',
       version='1.0',
-      description='Serializer for objects',
+      description='Serializer for objects(json/yaml/toml)',
       author='therealyou',
       install_requires=['PyYAML', 'toml', 'pytest'],
-      packages=['distutils', 'distutils.command'],
+      packages=['Serializers', 'Console'],
+      #scripts=['Console/ctrl.py']
      )
