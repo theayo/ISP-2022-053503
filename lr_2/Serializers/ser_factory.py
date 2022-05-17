@@ -1,5 +1,5 @@
 """Serializer factory"""
-from Src import Serializers
+import Serializers
 
 
 class SerializerFactory:
@@ -9,7 +9,7 @@ class SerializerFactory:
         pass
 
     @staticmethod
-    def create_serializer(serializer_type: str) -> Src.Serializers.serializer:
+    def create_serializer(serializer_type: str) -> Serializers.serializer:
         """Return serializer when got extension"""
         if serializer_type == 'json':
             return Serializers.JsonSerializer()

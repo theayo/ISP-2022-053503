@@ -104,7 +104,7 @@ def deserialize(item: dict[str, any]) -> any:
         if key == "NoneType":
             return None
 
-        if isinstance(value, int | float | str ):
+        if isinstance(value, int | float | str):
             return value
 
         if key == 'type':

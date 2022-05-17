@@ -1,6 +1,6 @@
 """Yaml serializer"""
-from Src.Serializers.serializer import Serializer
-import Src.Serializers.serialiazer_process as process
+from Serializers.serializer import Serializer
+import Serializers.serialiazer_process as process
 from yaml import safe_load, dump
 
 

@@ -1,6 +1,6 @@
 """Test set"""
 import unittest
-from Src import Serializers
+import Serializers
 from Tests import testing_things
 
 
