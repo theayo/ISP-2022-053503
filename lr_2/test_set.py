@@ -1,5 +1,5 @@
 import unittest
-from Serializers import *
+import Serializers
 from Serializers.ser_factory import SerializerFactory
 from Tests import testing_things
 
@@ -36,15 +36,15 @@ class TestClass(unittest.TestCase):
 
     def test_json_creator(self):
         ser = self.to_json_serializer
-        assert isinstance(ser, JsonSerializer)
+        assert isinstance(ser, Serializers.JsonSerializer)
 
     def test_yaml_creator(self):
         ser = self.to_yaml_serializer
-        assert isinstance(ser, YamlSerializer)
+        assert isinstance(ser, Serializers.YamlSerializer)
 
     def test_toml_creator(self):
         ser = self.to_toml_serializer
-        assert isinstance(ser, TomlSerializer)
+        assert isinstance(ser, Serializers.TomlSerializer)
 
     def test_set(self):
         ser = self.to_json_serializer.dumps(testing_things.set1)
