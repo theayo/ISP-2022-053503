@@ -50,7 +50,6 @@ def serialize(item) -> any:
         item_dict = dict(item)
         for key in item_dict.keys():
             item_dict[key] = serialize(item_dict[key])
-        print("hello")
         return item_dict
 
     if isinstance(item, types.CodeType):
