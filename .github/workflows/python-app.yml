@@ -13,7 +13,7 @@ jobs:
 
       - name: Run tests and collect coverage
         run: |
-          coverage run lr_2/test_set.py
+          coverage run -m unittest lr_2/test_set.py
           coverage xml
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
