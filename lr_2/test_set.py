@@ -1,9 +1,7 @@
 import unittest
+from Serializers import *
 from Serializers.ser_factory import SerializerFactory
-from Serializers.json_parser import JsonSerializer
-from Serializers.toml_parser import TomlSerializer
-from Serializers.yaml_parser import YamlSerializer
-import testing_things
+from Tests import testing_things
 
 
 class TestClass(unittest.TestCase):

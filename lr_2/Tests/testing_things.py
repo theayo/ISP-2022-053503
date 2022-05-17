@@ -57,6 +57,7 @@ class MyClass:
         """Return age of person.."""
         return self.age
 
+
 class B:
     pass
 
