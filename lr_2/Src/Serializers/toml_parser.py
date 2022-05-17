@@ -1,7 +1,7 @@
 """Toml Serializer"""
 import qtoml
-from Serializers.serializer import Serializer
-import Serializers.serialiazer_process as process
+from Src.Serializers.serializer import Serializer
+import Src.Serializers.serialiazer_process as process
 
 
 class TomlSerializer(Serializer):

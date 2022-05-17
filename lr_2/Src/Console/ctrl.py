@@ -4,8 +4,8 @@ import sys
 import importlib
 
 from arg_parse import ArgParser
-from Serializers import Serializer
-import Serializers.ser_factory as fabric
+from Src.Serializers import Serializer
+from Src import Serializers as fabric
 
 load_obj, dump_obj, convert_info = ArgParser.get_args()
 

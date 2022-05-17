@@ -1,9 +1,8 @@
 """Json Serializer"""
-import ast
 
-import Serializers.serialiazer_process as process
-from Serializers.serializer import Serializer
-from Serializers.json_packer import to_str
+import Src.Serializers.serialiazer_process as process
+from Src.Serializers.serializer import Serializer
+from Src.Serializers.json_packer import to_str
 
 
 class JsonSerializer(Serializer):
