@@ -1,6 +1,10 @@
 """Test set"""
 import unittest
+<<<<<<< HEAD
 from Src import Serializers
+=======
+import Serializers
+>>>>>>> a8ea9432bf5ab6dd4066385b4cd3660f727abc94
 from Tests import testing_things
 
 
