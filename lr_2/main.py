@@ -1,1 +1,5 @@
-print("МАльчик ты не понял мы домой летим")
+def magnit():
+    pass
+
+
+print("meow")

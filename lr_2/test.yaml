@@ -1,0 +1,36 @@
+func:
+  code:
+    co_argcount: 1
+    co_cellvars:
+      tuple: {}
+    co_code:
+      bytes: 64017d017400a0017c007c01140074021400a1015300
+    co_consts:
+      tuple:
+        el0: null
+        el1: 123
+    co_filename: /home/francua/python_labs/code/ISP-2022-053503/lr_2/Tests/testing_things.py
+    co_firstlineno: 6
+    co_flags: 67
+    co_freevars:
+      tuple: {}
+    co_kwonlyargcount: 0
+    co_lines: null
+    co_linetable:
+      bytes: '04011201'
+    co_lnotab:
+      bytes: '00010401'
+    co_name: f
+    co_names:
+      tuple:
+        el0: math
+        el1: sin
+        el2: c
+    co_nlocals: 2
+    co_posonlyargcount: 0
+    co_stacksize: 4
+    co_varnames:
+      tuple:
+        el0: x
+        el1: a
+    replace: null
