@@ -1,7 +1,6 @@
 """Test set"""
 import unittest
 import Serializers
-from Serializers.ser_factory import SerializerFactory
 from Tests import testing_things
 
 
@@ -9,9 +8,9 @@ class TestClass(unittest.TestCase):
     """Unittest class"""
     def setUp(self):
         """TEst"""
-        self.to_toml_serializer = SerializerFactory.create_serializer("toml")
-        self.to_yaml_serializer = SerializerFactory.create_serializer("yaml")
-        self.to_json_serializer = SerializerFactory.create_serializer("json")
+        self.to_toml_serializer = Serializers.SerializerFactory.create_serializer("toml")
+        self.to_yaml_serializer = Serializers.SerializerFactory.create_serializer("yaml")
+        self.to_json_serializer = Serializers.SerializerFactory.create_serializer("json")
 
     def test_f_yaml(self):
         """TEst"""
