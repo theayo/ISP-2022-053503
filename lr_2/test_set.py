@@ -108,5 +108,5 @@ class TestClass(unittest.TestCase):
         self.assertEqual(json_obj(2, 3), testing_things.mul(2, 3))
 
 
-if __name__ == '__main__':
+if __name__ == 'main':
     unittest.main()
