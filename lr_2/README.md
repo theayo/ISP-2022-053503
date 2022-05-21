@@ -1,1 +1,1 @@
-![alt Unittest coverage result](htmlcov/coverage.svg)
+(htmlcov/coverage.svg)
