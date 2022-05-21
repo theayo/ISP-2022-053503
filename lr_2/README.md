@@ -1,1 +1,1 @@
-[!codecov](coverage.svg)
+![codecov](coverage.svg)
